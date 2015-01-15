@@ -17,7 +17,7 @@ function init() {
 
   searchSuggestionEngine.initialize();
 
-  $('#search .typeahead').typeahead(
+  $('#search').typeahead(
     {
       hint: true,
       highlight: true,
