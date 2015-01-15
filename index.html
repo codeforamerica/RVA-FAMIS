@@ -8,6 +8,22 @@
     <link href="static/style.css" rel="stylesheet">
   </head>
   <body>
-    <p>Waka!</p>
+    <p>Great FAMIS site title</p>
+    <form>
+      Family income:
+      <input type="radio" name="income_below_150_yn" value="Y">Below 150%
+      <input type="radio" name="income_below_150_yn" value="N">Above 150%
+      <br>
+      Search:
+      <input type="text" name="search_term">
+      <br>
+      <button type="button" onclick="buildFamis()">Submit</button>
+    </form>
+
+    <div class="result">
+      <div class="covered"></div>
+      <div class="copay"></div>
+      <div class="description"></div>
+    </div>
   </body>
 </html>
