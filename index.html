@@ -1,29 +1,81 @@
 <html lang="en">
   <head>
     <title>FAMIS Search</title>
+    
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="static/tabletop.js"></script>
     <script src="static/famis.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="static/style.css" rel="stylesheet">
   </head>
   <body>
-    <p>Great FAMIS site title</p>
-    <form>
-      Family income:
-      <input type="radio" name="income_below_150_yn" value="Y">Below 150%
-      <input type="radio" name="income_below_150_yn" value="N">Above 150%
-      <br>
-      Search:
-      <input type="text" name="search_term">
-      <br>
-      <button type="button" onclick="buildFamis()">Submit</button>
-    </form>
+    <header class="cf">
+      <div class="container">
+        <h1>FAMIS Coverage Search</h1>
+        <form id="searchform">
+          <!-- Family income:
+          <input type="radio" name="income_below_150_yn" value="Y">Below 150%
+          <input type="radio" name="income_below_150_yn" value="N">Above 150%
+          <br> -->
+          <input id="search" class="slab" type="text" name="search_term" placeholder="Search" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search'">
+          <button id="submit" class="" type="button" onclick="buildFamis()">submit<span class="fa fa-chevron-down"></span></button>
+        </form>
+      </div>
+    </header>
 
-    <div class="result">
-      <div class="covered"></div>
-      <div class="copay"></div>
-      <div class="description"></div>
-    </div>
+    <section class="results">
+      <div class="container">
+
+        <ul class="results-list">
+          <li class="service-item">
+            <h3 class="service-title"></h3>
+            <div class="service-copay">
+              <span class="copay"></span><span id="copay-extra"></span>
+            </div>
+            <div class="service-info">
+              <span class="description"></span>
+              <span class="description-extra"></span>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="results-list result-styles">
+          <li class="service-item">
+            <h3 class="service-title">Emergency Services (Hospital Emergency Room)</h3>
+            <div class="service-copay">
+              $<span class="copay">2</span><span id="copay-extra"> for something or not.</span>
+            </div>
+            <div class="service-info">
+              <div class="description">
+                <p>The MCO shall provide for the reasonable reimbursement of services needed to ascertain whether an emergency exists in instances in which the clinical circumstances that existed at the time of the beneficiary’s presentation to the emergency room indicate that an emergency may exist. The MCO shall ensure that all covered emergency services are available twenty-four (24) hours a day and seven (7) days a week.</p>
+              </div>
+              <div class="description-extra">
+                <p>The MCO shall cover all emergency services provided by out-of-network providers. The MCO may not require prior authorization for emergency services. This applies to out-of-network as well as to in-network services that a member seeks in an emergency.</p>
+                <p>Members who present to the emergency room shall pay the emergency room co-payment. If it is determined that the visit was a non-emergency, the hospital may bill the member only for the difference between the emergency room and non-emergency co-payments, i.e. $8.00 for &lt;150% and $20.00 for &gt;150%. The hospital may not bill for additional charges.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="service-item">
+            <h3 class="service-title">Emergency Services (Hospital Emergency Room)</h3>
+            <div class="service-copay">
+              $<span class="copay">2</span><span id="copay-extra"> for something or not.</span>
+            </div>
+            <div class="service-info">
+              <div class="description">
+                <p>The MCO shall provide for the reasonable reimbursement of services needed to ascertain whether an emergency exists in instances in which the clinical circumstances that existed at the time of the beneficiary’s presentation to the emergency room indicate that an emergency may exist. The MCO shall ensure that all covered emergency services are available twenty-four (24) hours a day and seven (7) days a week.</p>
+              </div>
+              <div class="description-extra">
+                <p>The MCO shall cover all emergency services provided by out-of-network providers. The MCO may not require prior authorization for emergency services. This applies to out-of-network as well as to in-network services that a member seeks in an emergency.</p>
+                <p>Members who present to the emergency room shall pay the emergency room co-payment. If it is determined that the visit was a non-emergency, the hospital may bill the member only for the difference between the emergency room and non-emergency co-payments, i.e. $8.00 for &lt;150% and $20.00 for &gt;150%. The hospital may not bill for additional charges.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
   </body>
 </html>
