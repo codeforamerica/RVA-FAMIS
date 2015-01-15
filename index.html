@@ -4,6 +4,7 @@
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="static/tabletop.js"></script>
+    <script src="static/typeahead.bundle.js"></script>
     <script src="static/famis.js"></script>
     <link href="static/style.css" rel="stylesheet">
   </head>
@@ -15,7 +16,9 @@
       <input type="radio" name="income_below_150_yn" value="N">Above 150%
       <br>
       Search:
-      <input type="text" name="search_term">
+      <div id="search">
+	<input class="typeahead" type="text" name="search_term">
+      </div>
       <br>
       <button type="button" onclick="buildFamis()">Submit</button>
     </form>
