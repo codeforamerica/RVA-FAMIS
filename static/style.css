@@ -1,4 +1,125 @@
 body {
   padding:0;
   margin:0;
+  font-family:"Helvetica Neue", "Helvetica", sans-serif;
+  background-color:#f6f6f6;
+  color:#555;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Slabo 27px', serif;
+}
+.cf:before,
+.cf:after {
+  content:" ";
+  display:table;
+}
+.cf:after {
+  clear:both;
+}
+.cf {
+  *zoom:1;
+}
+.slab {
+  font-family: 'Slabo 27px', serif;
+}
+.container {
+  display:block;
+  max-width:650px;
+  margin:auto;
+}
+.container.res {
+  max-width:750px;
+}
+
+/*
+  SEARCH
+*/
+header {
+  background-color:#333;
+  color:#f6f6f6;
+  padding:100px 0 50px;
+}
+#searchform {}
+#search,
+#submit {
+  padding:.3em;
+  font-size:1.3em;
+  float:left;
+  font-family: 'Slabo 27px', serif;
+}
+#search {
+  width:80%;
+  border:none;
+}
+#submit {
+  width:20%;
+  border:none;
+  background:white;
+  text-transform:uppercase;
+  color:#c0c0c0;
+  cursor:pointer;
+  -webkit-transition: .5s;
+     -moz-transition: .5s;
+      -ms-transition: .5s;
+       -o-transition: .5s;
+          transition: .5s;
+}
+#submit .fa {
+  margin-left:10px;
+}
+#search:focus {
+  outline:none;
+}
+#search:focus ~ #submit {
+  color:steelblue;
+}
+
+/*
+  RESULTS
+*/
+.results-list, .result-styles {
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+h3.service-title {
+  font-family: 'Slabo 27px', serif;
+  font-size:1.3em;
+}
+.result-styles li.service-item {
+  font-size:0.9em;
+}
+
+.copay-info {
+  float:left;
+  width:20%;
+}
+.copay-block {
+  text-align:center;
+  border-radius:100%;
+}
+.copay-below {}
+.copay-above {}
+.copay-header {
+  border-bottom:1px solid #f6f6f6;
+  padding:5px 0;
+  text-transform:uppercase;
+  font-size:.8em;
+  font-weight:600;
+}
+.copay-extra {
+  width:80%;
+  margin:auto;
+  display:block;
+  font-size:12px;
+}
+.service-info {
+  float:left;
+  width:80%;
+}
+
+
+
+.description-extra {
+  color:#c0c0c0;
 }
