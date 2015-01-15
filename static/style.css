@@ -10,14 +10,14 @@ h1, h2, h3, h4, h5 {
 }
 .cf:before,
 .cf:after {
-    content:" ";
-    display:table;
+  content:" ";
+  display:table;
 }
 .cf:after {
-    clear:both;
+  clear:both;
 }
 .cf {
-    *zoom:1;
+  *zoom:1;
 }
 .slab {
   font-family: 'Slabo 27px', serif;
@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /*
-  SEARCH AREA
+  SEARCH
 */
 header {
   background-color:#333;
@@ -74,7 +74,9 @@ header {
   color:steelblue;
 }
 
-
+/*
+  RESULTS
+*/
 .results-list, .result-styles {
   list-style-type: none;
   margin:0;
@@ -87,6 +89,37 @@ h3.service-title {
 .result-styles li.service-item {
   font-size:0.9em;
 }
+
+.copay-info {
+  float:left;
+  width:20%;
+}
+.copay-block {
+  text-align:center;
+  border-radius:100%;
+}
+.copay-below {}
+.copay-above {}
+.copay-header {
+  border-bottom:1px solid #f6f6f6;
+  padding:5px 0;
+  text-transform:uppercase;
+  font-size:.8em;
+  font-weight:600;
+}
+.copay-extra {
+  width:80%;
+  margin:auto;
+  display:block;
+  font-size:12px;
+}
+.service-info {
+  float:left;
+  width:80%;
+}
+
+
+
 .description-extra {
   color:#c0c0c0;
 }
