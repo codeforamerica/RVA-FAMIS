@@ -6,27 +6,50 @@ function init() {
     callback: function(data) {allData = data;},
     simpleSheet: true
   });
+ 
+  var searchTerms = ['Vision', 'Ambulance', 'Emergency Room', 'Vaccinations'];
+  
+  var searchSuggestionEngine = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    local: $.map(searchTerms, function(term) { return { value: term }; })
+  });
+
+  searchSuggestionEngine.initialize();
+
+  $('#search .typeahead').typeahead(
+    {
+      hint: true,
+      highlight: true,
+      minLength: 1
+    },
+    {
+      name: 'searchTerms',
+      displayKey: 'value',
+      source: searchSuggestionEngine.ttAdapter()
+    }
+  );
 }
 
 function buildFamis(e) {
-    printSearchResult(allData[0]);
+  printSearchResult(allData[0]);
 }
 
 function printSearchResult(result) {
-    var coveredText;
-    if (result.covered_yn == 'Yes') {
-	coveredText = "FAMIS covers ";
-    }
-    else {
-	coveredText = "FAMIS does not cover ";
-    }
-    coveredText = coveredText.concat(result.service);
-    $(".covered").append(coveredText);
+  var coveredText;
+  if (result.covered_yn == 'Yes') {
+    coveredText = "FAMIS covers ";
+  }
+  else {
+    coveredText = "FAMIS does not cover ";
+  }
+  coveredText = coveredText.concat(result.service);
+  $(".covered").append(coveredText);
 
-    var copayText = "Copay: ".concat(result.copay_below_150);
-    $(".copay").append(copayText)
-    var descriptionText = result.description_new;
-    $(".description").append(descriptionText);
+  var copayText = "Copay: ".concat(result.copay_below_150);
+  $(".copay").append(copayText);
+  var descriptionText = result.description_new;
+  $(".description").append(descriptionText);
 }
 
 window.onload = init;
