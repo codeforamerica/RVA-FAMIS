@@ -70,7 +70,7 @@ var json = [
 
 function init() {
  
-  var searchTerms = ['Vision', 'Ambulance', 'Emergency Room', 'Vaccinations', 'School Vaccinations'];
+  var searchTerms = ['Vision', 'Glasses', 'Gynecology', 'Ambulance', 'Emergency Room', 'Vaccinations', 'School Vaccinations'];
   
   var searchSuggestionEngine = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
