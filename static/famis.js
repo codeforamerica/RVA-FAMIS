@@ -145,6 +145,9 @@ function printSearchResult(service) {
   // caveats loop
   // html += service.description_updated;
 
+
+  html += "<br><div>Was this helpful? <i class='fa fa-thumbs-o-up'></i> <i class='fa fa-thumbs-o-down'></i> </div>";
+
   html += '</div>';
   html += '</article>';
 
