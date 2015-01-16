@@ -127,8 +127,8 @@ function printSearchResult(service) {
     html += '<div class="copay-info">';
     html += '<div class="copay-block copay-below">';
     html += '<p class="copay"><span class="copay-inner">$' + service.copay_low + '</span></span><span class="copay-extra"></span></p></div>';
-    html += '<div class="copay-block copay-above">';
-    html += '<p class="copay"><span class="copay-inner">$' + service.copay_high + '</span></span><span class="copay-extra"></span></p></div>';
+    //html += '<div class="copay-block copay-above">';
+    //html += '<p class="copay"><span class="copay-inner">$' + service.copay_high + '</span></span><span class="copay-extra"></span></p></div>';
     html += '</div>';
   }
 
