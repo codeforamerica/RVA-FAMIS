@@ -20,19 +20,30 @@ h1, h2, h3, h4, h5 {
   *zoom:1;
 }
 .container {
-  display:block;
-  max-width:650px;
-  margin:auto;
+  padding:20px;
+}
+@media (min-width: 690px) {
+  .container {
+    display:block;
+    max-width:650px;
+    margin:auto;
+  }
 }
 
+
+
 /*
-  SEARCH
+** 
+**
+**  SEARCH 
+**
+**
 */
 header {
   background-color:#333;
   color:#f6f6f6;
-  padding:100px 0 50px;
-  margin-bottom:50px;
+  padding:20px 0;
+  margin-bottom:20px;
   border-bottom:5px solid #e5e5e5;
   background:url(http://tn.clashot.com/thumbs/3249654/57150290/thumb_w800.jpg) center center no-repeat;
   -webkit-background-size: cover; 
@@ -40,15 +51,14 @@ header {
        -o-background-size: cover; 
           background-size: cover;
 }
-.site-title {
-  text-shadow:1px 1px 1px rgba(0,0,0,0.8);
-}
+.site-title { text-shadow:1px 1px 1px rgba(0,0,0,0.8); }
 #searchform {}
 .search,
 #submit {
+  display:block;
+  width:100%;
   padding:5px;
   font-size:20px;
-  float:left;
   font-family: 'Slabo 27px', serif;
 }
 .search {
@@ -56,45 +66,78 @@ header {
   border:none;
 }
 #submit {
-  width:20%;
   border:none;
-  background:white;
+  background:#2ECC40;
   text-transform:uppercase;
-  color:#c0c0c0;
-  cursor:pointer;
-  -webkit-transition: .5s;
-     -moz-transition: .5s;
-      -ms-transition: .5s;
-       -o-transition: .5s;
-          transition: .5s;
+  color:#fff;
+  letter-spacing:.15em;
 }
-#submit .fa {
-  margin-left:10px;
-}
-.search:focus {
-  outline:none;
+.search:focus { outline:none; }
+@media (min-width: 690px) {
+  header {
+    padding:100px 0 50px;
+    margin-bottom:50px;
+  }
+  .search, #submit { float:left; }
+  .search {
+    width:100%;
+    border:none;
+  }
+  #submit {
+    width:19%;
+    cursor:pointer;
+  }
 }
 
+
+
 /*
-  TYPEAHEAD
+** 
+**
+**  TYPEAHEAD 
+**
+**
 */
 .twitter-typeahead {
-  float: left;
-  width: 80%;
+  width:100%;
+  margin-bottom:1%;
 }
 .tt-dropdown-menu {
   background-color: white;
   width: 100%;
 }
+.tt-hint {
+  color: #c0c0c0
+}
 .tt-suggestion {
-  padding-left: 5px;
+  margin:0;
+  padding: 1px 5px;
   color: black;
   font-size: 20px;
+  line-height: 0;
+  border-top:1px solid #f6f6f6;
   font-family: 'Slabo 27px', serif; 
 }
+.tt-suggestion.tt-cursor {
+  background-color:steelblue;
+  color:#fff;
+}
+@media (min-width: 690px) {
+  .twitter-typeahead {
+    float: left;
+    width: 80%;
+    margin-right:1%;
+  }
+}
+
+
 
 /*
-  RESULTS
+** 
+**
+**  RESULTS 
+**
+**
 */
 .results-list, .result-styles {
   list-style-type: none;
@@ -168,11 +211,18 @@ h3.service-title {
   font-size:12px;
   font-size:.5em;
 }
-.service-info {
-}
-
-
-
+.service-info {}
 .description-extra {
   color:#c0c0c0;
 }
+@media (min-width: 690px) {
+  
+}
+
+/*
+** 
+**
+**  FOOTER 
+**
+**
+*/
