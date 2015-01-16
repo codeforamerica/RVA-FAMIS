@@ -153,7 +153,7 @@ header {
 h3.service-title {
   font-family: 'Slabo 27px', serif;
   font-size:1.3em;
-  margin:0 0 .5em;
+  margin:0 0 .3em;
   display: inline-block;
 }
 .result-styles li.service-item {
@@ -176,6 +176,7 @@ i.fa.fa-thumbs-o-down:hover {
   display: inline-block;
   margin-left:.6em;
   padding-top:2em;
+  vertical-align:bottom;
 }
 .copay-block {
   border-radius:100%;
