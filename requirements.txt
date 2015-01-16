@@ -2,3 +2,5 @@ django
 djangorestframework
 markdown
 psycopg2
+django
+django-extensions
