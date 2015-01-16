@@ -44,6 +44,11 @@ function init() {
       source: searchSuggestionEngine.ttAdapter()
     }
   );
+
+  $('#submit').on('click', function(e){
+    e.preventDefault();
+    buildFamis();
+  });
 }
 
 function buildFamis(e) {
