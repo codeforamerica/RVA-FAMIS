@@ -1,0 +1,4 @@
+django
+djangorestframework
+markdown
+psycopg2
