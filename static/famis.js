@@ -44,6 +44,11 @@ function init() {
       source: searchSuggestionEngine.ttAdapter()
     }
   );
+
+  $('#submit').on('click', function(e){
+    e.preventDefault();
+    buildFamis();
+  });
 }
 
 function buildFamis(e) {
@@ -79,10 +84,14 @@ function printSearchResult(service) {
     title = '<span class="fa fa-times"></span>' + service.service_title;
   }
   html += '<h3 class="service-title">' + title + '</h3>';
-  html += '<div class="copay-info"><div class="copay-block copay-below"><div class="copay-header">Below</div>';
-  html += '<p>$<span class="copay">' + service.copay_below + '</span><span class="copay-extra"></span></p></div>';
-  html += '<div class="copay-block copay-above"><div class="copay-header">Above</div>';
-  html += '<p>$<span class="copay">' + service.copay_above + '</span><span class="copay-extra"></span></p></div></div>';
+
+  // add copay info
+  if(service.covered == 'yes') {
+    html += '<div class="copay-info"><div class="copay-block copay-below">';
+    html += '<p class="copay"><span class="copay-inner">$' + service.copay_below + '</span></span><span class="copay-extra"></span></p></div>';
+    html += '<div class="copay-block copay-above">';
+    html += '<p class="copay"><span class="copay-inner">$' + service.copay_above + '</span></span><span class="copay-extra"></span></p></div></div>';
+  }
   html += '<div class="service-info"><div class="description">';
   html += service.description_updated;
   html += '</div>';
