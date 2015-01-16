@@ -43,7 +43,6 @@ header {
   background-color:#333;
   color:#f6f6f6;
   padding:20px 0;
-  margin-bottom:20px;
   border-bottom:5px solid #e5e5e5;
   background:url(http://tn.clashot.com/thumbs/3249654/57150290/thumb_w800.jpg) center center no-repeat;
   -webkit-background-size: cover; 
@@ -51,7 +50,7 @@ header {
        -o-background-size: cover; 
           background-size: cover;
 }
-.site-title { text-shadow:1px 1px 1px rgba(0,0,0,0.8); }
+.site-title, header p { text-shadow:1px 1px 1px rgba(0,0,0,0.8); }
 #searchform {}
 .search,
 #submit {
@@ -145,7 +144,6 @@ header {
   padding:0;
 }
 .service-item {
-  margin-bottom:2em;
   border-bottom:1px solid #e5e5e5;
   padding-bottom:30px;
 }
