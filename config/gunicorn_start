@@ -2,7 +2,7 @@
  
 NAME="backend"                                        # Name of the application
 VENV_DIR=/webapps/backend/
-DJANGODIR=/webapps/backend/backend/backend                    # Django project directory
+DJANGODIR=/webapps/backend/backend                    # Django project directory
 SOCKFILE=/webapps/backend/run/gunicorn.sock           # we will communicate using this unix socket
 USER=backend                                          # the user to run as
 GROUP=webapps                                     # the group to run as
@@ -10,7 +10,6 @@ NUM_WORKERS=3                                     # how many worker processes sh
 
 DJANGO_SETTINGS_MODULE=backend.settings               # which settings file should Django use 
 DJANGO_WSGI_MODULE=backend.wsgi                       # WSGI module name
-
 
 LOGFILE=${VENV_DIR}logs/gunicorn.log
  
