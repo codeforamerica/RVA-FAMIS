@@ -25,7 +25,7 @@ else:
             'PASSWORD': os.environ.get('DB_PASS'),
         }
     }
-    ALLOWED_HOSTS = [*]
+    ALLOWED_HOSTS = ['*']
 
 
 
