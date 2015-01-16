@@ -54,7 +54,18 @@ var json = [
                 "plain": "Contacts are covered if your eye doctor says you need them."
             }
         ]
-    }, 
+    },
+    {
+        "name": "Colored Contact Lenses",
+        "covered": "no", 
+        "copay_low": 100, 
+        "copay_high": 100, 
+        "caveats": [
+            {
+                "plain": "Colored contacts are not covered by FAMIS."
+            }
+        ]
+    },
 ];
 
 function init() {
