@@ -24,9 +24,6 @@ h1, h2, h3, h4, h5 {
   max-width:650px;
   margin:auto;
 }
-.container.res {
-  max-width:750px;
-}
 
 /*
   SEARCH
@@ -35,6 +32,16 @@ header {
   background-color:#333;
   color:#f6f6f6;
   padding:100px 0 50px;
+  margin-bottom:50px;
+  border-bottom:5px solid #e5e5e5;
+  background:url(http://tn.clashot.com/thumbs/3249654/57150290/thumb_w800.jpg) center center no-repeat;
+  -webkit-background-size: cover; 
+     -moz-background-size: cover; 
+       -o-background-size: cover; 
+          background-size: cover;
+}
+.site-title {
+  text-shadow:1px 1px 1px rgba(0,0,0,0.8);
 }
 #searchform {}
 .search,
@@ -64,11 +71,8 @@ header {
 #submit .fa {
   margin-left:10px;
 }
-#search:focus {
+.search:focus {
   outline:none;
-}
-#search:focus ~ #submit {
-  color:steelblue;
 }
 
 /*
@@ -97,24 +101,59 @@ header {
   margin:0;
   padding:0;
 }
+.service-item {
+  margin-bottom:2em;
+  border-bottom:1px solid #e5e5e5;
+  padding-bottom:30px;
+}
+
 h3.service-title {
   font-family: 'Slabo 27px', serif;
   font-size:1.3em;
+  margin:0 0 .5em;
 }
 .result-styles li.service-item {
   font-size:0.9em;
 }
 
+.service-title .fa { margin-right:10px; }
+.service-title .fa.fa-check { color:#2ECC40; }
+.service-title .fa.fa-times { color:#FF4136; }
+
 .copay-info {
-  float:left;
-  width:20%;
+  margin-bottom:.6em;
 }
 .copay-block {
-  text-align:center;
   border-radius:100%;
+  font-size:1.3em;
+  display:inline-block;
+  margin-right:10px;
 }
-.copay-below {}
-.copay-above {}
+.copay {
+  display:inline-block;
+  margin:auto;
+  width:30px;
+  height:30px;
+  position:relative;
+  border-radius:100%;
+  text-align:center;
+}
+.copay-inner {
+  position:absolute;
+  top: 6px;
+  left: 0;
+  width: 100%;
+  font-size:.81em;
+  font-family: 'Slabo 27px', serif;
+}
+.copay-below .copay {
+  border:2px solid #4682b4;
+  color:#4682b4;
+}
+.copay-above .copay {
+  border:2px solid #a2c0d9;
+  color:#a2c0d9;
+}
 .copay-header {
   border-bottom:1px solid #f6f6f6;
   padding:5px 0;
@@ -127,10 +166,9 @@ h3.service-title {
   margin:auto;
   display:block;
   font-size:12px;
+  font-size:.5em;
 }
 .service-info {
-  float:left;
-  width:80%;
 }
 
 
