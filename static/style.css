@@ -183,7 +183,7 @@ h3.service-title {
 }
 .copay-inner {
   position:absolute;
-  top: 6px;
+  top: 5px;
   left: 0;
   width: 100%;
   font-size:.81em;
@@ -211,12 +211,24 @@ h3.service-title {
   font-size:12px;
   font-size:.5em;
 }
-.service-info {}
-.description-extra {
-  color:#c0c0c0;
+.service-info {
+  list-style-type: none;
+  margin:0;
+  padding:0;
+  padding-left:20px;
+}
+.service-info li {
+  position:relative;
+  margin-bottom:10px;
+}
+.service-info li:before {
+  content:"\f105";
+  position:absolute;
+  left:-15px;
+  font-family:'FontAwesome';
 }
 @media (min-width: 690px) {
-  
+
 }
 
 /*
