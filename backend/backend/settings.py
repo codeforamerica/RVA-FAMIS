@@ -13,12 +13,21 @@ if os.environ.get('IS_DEV'):
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+    ALLOWED_HOSTS = []
 else:
     DEBUG = False
     TEMPLATE_DEBUG = DEBUG
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'backend',
+            'USER': 'backend',
+            'PASSWORD': os.environ.get('DB_PASS'),
+        }
+    }
+    ALLOWED_HOSTS = [*]
 
 
-ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     'django.contrib.admin',
