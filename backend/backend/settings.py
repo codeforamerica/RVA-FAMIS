@@ -3,7 +3,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 REPO_DIR = os.path.dirname(BASE_DIR)
 
-
 if os.environ.get('IS_DEV'):
     DEBUG = True
     TEMPLATE_DEBUG = DEBUG
@@ -62,3 +61,10 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(REPO_DIR, "frontend", "static"),
+)
+
+STATIC_ROOT = os.path.join(REPO_DIR, 'static')
+
+

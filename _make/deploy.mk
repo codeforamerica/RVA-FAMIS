@@ -33,6 +33,11 @@ deploy.permissions:
 	ssh ${deployhost} 'chmod -R g+w /webapps/backend'
 	ssh ${deployhost} 'chmod +x /webapps/backend/bin/gunicorn_start'
 
+deploy.static:
+	python backend/manage.py collectstatic
+	scp static ${deployhost}:/webapps/backend/
+
 deploy.all:
 	make deploy.config
 	make deploy.src
+	make deploy.static
