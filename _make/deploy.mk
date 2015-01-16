@@ -25,6 +25,7 @@ deploy.config:
 
 deploy.src:
 	scp -r backend ${deployhost}:/webapps/backend/
+	scp requirements.txt ${deployhost}:/webapps/backend/
 	make deploy.permissions
 
 deploy.permissions:
