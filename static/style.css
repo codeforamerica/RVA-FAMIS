@@ -50,7 +50,7 @@ header {
        -o-background-size: cover; 
           background-size: cover;
 }
-.site-title, header p { text-shadow:1px 1px 1px rgba(0,0,0,0.8); }
+.site-title, .header-description { text-shadow:1px 1px 1px rgba(0,0,0,0.8); }
 #searchform {}
 .search,
 #submit {
