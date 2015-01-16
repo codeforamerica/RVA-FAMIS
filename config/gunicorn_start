@@ -1,0 +1,42 @@
+#!/bin/bash
+ 
+NAME="backend"                                        # Name of the application
+VENV_DIR=/webapps/backend/
+DJANGODIR=/webapps/backend/backend/backend                    # Django project directory
+SOCKFILE=/webapps/backend/run/gunicorn.sock           # we will communicate using this unix socket
+USER=backend                                          # the user to run as
+GROUP=webapps                                     # the group to run as
+NUM_WORKERS=3                                     # how many worker processes should Gunicorn spawn
+
+DJANGO_SETTINGS_MODULE=backend.settings               # which settings file should Django use 
+DJANGO_WSGI_MODULE=backend.wsgi                       # WSGI module name
+
+
+LOGFILE=${VENV_DIR}logs/gunicorn.log
+ 
+echo "Starting $NAME as `whoami`"
+ 
+# Activate the virtual environment
+cd $DJANGODIR
+source /webapps/backend/bin/activate
+export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
+export PYTHONPATH=$DJANGODIR:$PYTHONPATH
+ 
+# Create the run directory if it doesn't exist
+RUNDIR=$(dirname $SOCKFILE)
+test -d $RUNDIR || mkdir -p $RUNDIR
+ 
+# read environmental variables
+source /webapps/backend/.env-prod
+
+# Start your Django Unicorn
+# Programs meant to be run under supervisor should not daemonize themselves (do not use --daemon)
+exec /webapps/backend/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
+  --name $NAME \
+  --workers $NUM_WORKERS \
+  --user=$USER --group=$GROUP \
+  --access-logfile $LOGFILE \
+  --error-logfile $LOGFILE \
+  --debug \
+  --log-level=debug \
+  --bind=unix:$SOCKFILE
