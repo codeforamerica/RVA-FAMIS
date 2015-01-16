@@ -1,74 +1,65 @@
 var allData;
 var json = [
     {
-        "id": 1, 
-        "name": "Immunizations", 
+        "name": "Eyeglasses (Frames & Lenses)",
         "covered": "yes", 
-        "search_terms": "Vaccines, Measles, Mumps", 
-        "copay_low": 0, 
-        "copay_high": 0, 
+        "copay_low": 35, 
+        "copay_high": 35, 
         "caveats": [
             {
-                "legalese": "The MCO shall cover all emergency services provided by out-of-network providers.", 
-                "plain": "Includes coverage for out-of-network providers."
+                "plain": "One pair of eyeglasses at a time are covered if your eye doctor says you need them."
             }
         ]
     }, 
     {
-        "id": 2, 
-        "name": "Emergency Services (Hospital Emergency Room)", 
+        "name": "Eye Exams",
         "covered": "yes", 
-        "search_terms": "ER,", 
-        "copay_low": 5, 
-        "copay_high": 2, 
-        "caveats": []
-    }, 
-    {
-        "id": 3, 
-        "name": "Pap Smears", 
-        "covered": "yes", 
-        "search_terms": "", 
-        "copay_low": 0, 
-        "copay_high": 0, 
-        "caveats": []
-    }, 
-    {
-        "id": 4, 
-        "name": "Pregnancy-related Services", 
-        "covered": "yes", 
-        "search_terms": "", 
-        "copay_low": 0, 
-        "copay_high": 0, 
+        "copay_low": 2, 
+        "copay_high": 5, 
         "caveats": [
             {
-                "legalese": "The MCO shall cover services to pregnant women, including prenatal services for FAMIS and FAMIS MOMS. There is no co-pay for pregnancy related services.", 
-                "plain": "Pregnancy related services and prenatal services are covered with no copay."
-            }, 
-            {
-                "legalese": "No cost sharing at all will be charged to members enrolled in FAMIS MOMS.", 
-                "plain": "Members should be enrolled in FAMIS MOMS, a special program for pregnancy services."
+                "plain": "Covers routine eye exams every 2 years."
             }
         ]
     }, 
     {
-        "id": 5, 
-        "name": "Prescription Drugs", 
+        "name": "Bifocal Eyeglasses",
         "covered": "yes", 
-        "search_terms": "pills", 
-        "copay_low": 5, 
-        "copay_high": 2, 
+        "copay_low": 50, 
+        "copay_high": 50, 
         "caveats": [
             {
-                "legalese": "The MCO shall be responsible for covering all medically necessary drugs for its members that by Federal or State law requires a prescription. The MCO shall cover all FAMIS covered prescription drugs prescribed by providers licensed and/or certified as having authority to prescribe the drug. The MCO is required to cover prescription drugs prescribed by the outpatient mental health provider. The MCO is not required to cover Drug Efficacy Study Implementation (DESI) drugs or over the counter prescriptions.\r\nThe MCO may establish a formulary, may require prior authorization on certain medications, and may implement a mandatory generic substitution program. However, the MCO shall have in place special authorization procedures to allow providers to access drugs outside of this formulary, if medically necessary. The MCO shall establish policies and procedures to allow providers to request a brand name drug for a member if it is medically necessary. The MCO shall cover atypical  antipsychotic  medications developed for the treatment of schizophrenia. The MCO shall ensure appropriate access to the most effective means to treat, except where indicated for the safety of the patient. The Contractor shall not cover prescriptions for erectile dysfunction medication for members identified as having been convicted of felony sexual offenses.", 
-                "plain": "If a generic is available, member pays the copayment plus 100% of the difference between the allowable charge of the generic drug and the brand drug."
+                "plain": "One pair of eyeglasses at a time are covered if your eye doctor says you need them."
             }
         ]
-    }
+    }, 
+    {
+        "name": "Trifocal Eyeglasses",
+        "covered": "yes", 
+        "copay_low": 88, 
+        "copay_high": 88, 
+        "caveats": [
+            {
+                "plain": "One pair of eyeglasses at a time are covered if your eye doctor says you need them."
+            }
+        ]
+    }, 
+    {
+        "name": "Contacts",
+        "covered": "yes", 
+        "copay_low": 100, 
+        "copay_high": 100, 
+        "caveats": [
+            {
+                "plain": "Contacts are covered if your eye doctor says you need them."
+            }
+        ]
+    }, 
 ];
 
 function init() {
  
-  var searchTerms = ['Vision', 'Ambulance', 'Emergency Room', 'Vaccinations'];
+  var searchTerms = ['Vision', 'Ambulance', 'Emergency Room', 'Vaccinations', 'School Vaccinations'];
   
   var searchSuggestionEngine = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
