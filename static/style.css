@@ -154,6 +154,7 @@ h3.service-title {
   font-family: 'Slabo 27px', serif;
   font-size:1.3em;
   margin:0 0 .5em;
+  display: inline-block;
 }
 .result-styles li.service-item {
   font-size:0.9em;
@@ -164,7 +165,9 @@ h3.service-title {
 .service-title .fa.fa-times { color:#FF4136; }
 
 .copay-info {
-  margin-bottom:.6em;
+  display: inline-block;
+  margin-left:.6em;
+  padding-top:2em;
 }
 .copay-block {
   border-radius:100%;
